@@ -1,0 +1,475 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+body {
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 5px 9px;
+  max-width: 100vw;
+  width: 100vw;
+  margin: 0 auto;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+html {
+  font-size: 62.5%;
+  width: 100vw;
+}
+
+
+table {
+  overflow-x: auto;
+background-color: white;
+border-radius: 10px;
+  width: 100%;
+}
+thead {
+  background-color: #f7f7f8;
+}
+th,
+td {
+  vertical-align: middle;
+  white-space: nowrap;
+}
+th {
+  padding: 20px 30px;
+  font-weight: 600;
+  text-align: left;
+  font-size: 18px;
+}
+td {
+  padding: 15px 30px;
+  font-size: 15px;
+}
+tbody {
+}
+
+.status-unpaid {
+  color: red;
+  background-color: #ffe0e0; /* Nền màu đỏ nhạt */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.status-paid {
+  color: green;
+  background-color: #e0ffe0; /* Nền màu xanh lá cây nhạt */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+/* Outer container for centering the content */
+.flex.justify-center.text-\[\#101010\] {
+  display: flex;
+  justify-content: center;
+  color: rgb(16, 16, 16); /* #101010 */
+}
+
+/* Inner container for vertical alignment and padding */
+.flex.flex-col.items-center.py-\[27px\] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 27px;
+  padding-bottom: 27px;
+}
+
+/* Container for rating and vote count */
+.flex.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+/* Rating value */
+.text-\[40px\].font-bold.leading-\[47px\].mr-\[32px\] {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 47px;
+  margin-right: 32px;
+}
+
+/* Container for vote count */
+.flex.flex-col.items-center.justify-center.text-\[\#101010\] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(16, 16, 16); /* #101010 */
+}
+
+/* Vote count text */
+.text-\[14px\].mt-\[4px\] {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* Percentage of customers who rated the product */
+.text-\[\#101010\].mt-\[16px\].text-center {
+  color: rgb(16, 16, 16); /* #101010 */
+  margin-top: 16px;
+  text-align: center;
+}
+
+.inline.mt-\[16px\].text-center {
+    display: inline;
+    margin-top: 16px;
+    text-align: center;
+}
+
+/* Button for writing a review */
+.items-center.bg-\[color\(srgb_0\.181961_0\.222745_0\.596078\)\].border-\[\#0000\].rounded-full.border.border-\[0\.8px\].text-white.font-inter.text-sm.font-medium.justify-center.tracking-\[-0\.14px\].leading-\[23\.8px\].px-6.py-3.text-center.uppercase.p-0.mt-\[12px\] {
+  display: flex;
+  align-items: center;
+  background-color: rgb(46, 57, 152); /* color(srgb_0.181961_0.222745_0.596078) */
+  border: 0;
+  border-radius: 9999px;
+  border: 0.8px solid transparent;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  justify-content: center;
+  letter-spacing: -0.14px;
+  line-height: 23.8px;
+  padding: 12px 24px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0;
+  margin-top: 12px;
+}
+
+/* Inner span of the button */
+.flex.items-center.justify-center.text-white.text-sm.font-medium.gap-2.tracking-\[-0\.14px\].leading-\[14px\].text-center.uppercase.p-0.m-0 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  gap: 8px;
+  letter-spacing: -0.14px;
+  line-height: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}
+
+/* SVG icon in the button */
+.text-white.fill-none.text-sm.font-medium.tracking-\[-0\.14px\].leading-\[14px\].text-center.uppercase {
+  color: white;
+  fill: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.14px;
+  line-height: 14px;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* Container for the entire comment section (if show is true) */
+.flex.items-center.justify-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container for rating, textarea, file input, images, and button */
+.flex.gap-\[12px\].flex-col.mb-\[12px\] {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* Container for the rating component */
+.flex.items-center.justify-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Textarea for comment input */
+.border.border-gray.p-1\.5.w-\[300px\] {
+  border: 1px solid gray;
+  padding: 6px; /* Adjusted padding for better readability */
+  width: 300px;
+}
+
+/* File input styling */
+input[type="file"].flex.items-center.w-full.text-sm.text-gray-500 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 14px;
+  color: rgb(107, 114, 128); /* text-gray-500 equivalent */
+}
+
+input[type="file"].file\:mr-4.file\:py-2.file\:px-2 {
+  margin-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+input[type="file"].file\:rounded-md.file\:border-0 {
+  border-radius: 0.375rem;
+  border: 0;
+}
+
+input[type="file"].file\:text-sm.file\:font-semibold {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input[type="file"].file\:bg-blue-50.file\:text-blue-700 {
+  background-color: rgb(219, 234, 254); /* bg-blue-50 equivalent */
+  color: rgb(29, 78, 216); /* text-blue-700 equivalent */
+}
+
+input[type="file"].hover\:file\:bg-blue-100:hover {
+  background-color: rgb(191, 219, 254); /* hover:file:bg-blue-100 equivalent */
+}
+
+input[type="file"].h-\[42\]px{
+    height: 42px;
+}
+
+/* Container for image previews */
+.mt-2.grid.grid-cols-9.gap-2 {
+  margin-top: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+/* Individual image preview container */
+.relative.inline-block {
+  position: relative;
+  display: inline-block;
+}
+
+/* Image styling */
+.h-24.w-24.object-cover.rounded-md {
+  height: 6rem;
+  width: 6rem;
+  object-fit: cover;
+  border-radius: 0.375rem;
+}
+
+/* Remove image button */
+.absolute.top-0.right-0.bg-red-500.text-white.rounded-full.w-6.h-6.flex.items-center.justify-center {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgb(239, 68, 68); /* bg-red-500 equivalent */
+  color: white;
+  border-radius: 9999px;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Send comment button */
+.bg-blue-800.rounded-lg.text-white.flex.font-semibold.justify-center.leading-5.mt-10.p-1.text-center.text-\[12px\].font-arial.w-\[300px\] {
+  background-color: rgb(30, 58, 138); /* bg-blue-800 equivalent */
+  border-radius: 0.5rem;
+  color: white;
+  display: flex;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25rem;
+  margin-top: 2.5rem;
+  padding: 0.25rem;
+  text-align: center;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  width: 300px;
+}
+.review-container {
+  max-width: 300px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between; /* Đẩy user và ngày ra hai bên */
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.review-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.review-text {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.review-images {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.review-image img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-left: 10px;
+}
+
+.review-user-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px; /* Khoảng cách với phần đánh giá */
+}
+.review-body {
+  font-size: 14px;
+  margin-bottom: 8px; /* Khoảng cách với phần nội dung */
+}
+.con-thoi-han {
+  /* Kiểu mặc định nếu còn thời hạn */
+  background-color: lightgreen;
+  color: darkgreen;
+  padding: 3px 7px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.het-thoi-han {
+  /* Kiểu nếu hết thời hạn */
+  background-color: lightcoral;
+  color: darkred;
+  padding: 3px 7px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: line-through; /* Gạch ngang */
+}
+.da-thanh-ly {
+  color: black;
+  background-color: orange;
+  padding: 2px 5px; /* Thêm khoảng trắng xung quanh chữ */
+  border-radius: 3px; /* Bo tròn góc nhẹ */
+}
+
+/* CSS cho thẻ span "Đã thanh toán" */
+.da-thanh-toan {
+  background-color: #e6ffe6; /* Màu nền xanh nhạt */
+  color: #008000; /* Màu chữ xanh lá cây đậm */
+  padding: 5px 10px; /* Khoảng trắng xung quanh chữ */
+  border-radius: 5px; /* Bo tròn góc nhẹ */
+  font-weight: bold; /* Chữ đậm */
+  font-size: 0.9em; /* Kích thước chữ nhỏ hơn một chút */
+}
+
+/* CSS cho thẻ span "Chưa thanh toán" */
+.chua-thanh-toan {
+  background-color: #ffe6e6; /* Màu nền đỏ nhạt */
+  color: #cc0000; /* Màu chữ đỏ đậm */
+  padding: 5px 10px; /* Khoảng trắng xung quanh chữ */
+  border-radius: 5px; /* Bo tròn góc nhẹ */
+  font-weight: bold; /* Chữ đậm */
+  font-size: 0.9em; /* Kích thước chữ nhỏ hơn một chút */
+}
+
+.sap-het-hang {
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+  padding: 3px 7px;
+  border-radius: 5px;
+  
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+.sap-het-hang1 {
+  color: red; /* Màu chữ đỏ tươi */
+  font-weight: bold; /* In đậm để tăng thêm sự nổi bật */
+}
+
+.flex .date {
+  padding: 8px;
+  border: 1px solid #007bff; /* Màu border xanh dương */
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333; /* Màu chữ */
+  background-color: #f8f9fa; /* Màu nền nhạt */
+  margin-bottom: 10px;
+}
+
+.flex .date:focus {
+  outline: none; /* Loại bỏ viền focus mặc định của trình duyệt */
+  border-color: #0056b3; /* Màu border đậm hơn khi focus */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Hiệu ứng bóng đổ khi focus */
+}
+.label2 {
+  font-weight: bold;
+  font-size: 1rem; /* Kích thước chữ (có thể điều chỉnh) */
+  color: #dc3545; /* Màu chữ (màu xám đậm) */
+  margin-right: 7px; /* Tạo khoảng cách bên phải label với DatePicker */
+  font-size: 15px;
+}
+.end-date-label {
+  font-weight: bold;
+  color: #dc3545; /* Màu đỏ (ví dụ) */
+  font-size: 1rem;
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+.thongKeButton { /* Hoặc tên class bạn đã chọn */
+  width: 150px;
+  background-color: #dc3545; /* Màu đỏ đậm (thường dùng cho cảnh báo hoặc hành động quan trọng) */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.thongKeButton:hover {
+  background-color: #c82333; /* Màu đỏ đậm hơn một chút khi hover */
+}
+
+.thongKeButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5); /* Màu đỏ nhạt hơn cho focus */
+}
+
+.thongKeButton:active {
+  background-color: #bd2130; /* Màu đỏ đậm nhất khi active */
+}
+
+.vi {
+  text-align: center; /* Căn giữa nội dung theo chiều ngang */
+  color: #777; /* Màu xám nhạt, dịu mắt */
+  font-size: 1rem; /* Kích thước chữ vừa phải */
+  font-style: italic; /* Kiểu chữ nghiêng nhẹ */
+  padding: 20px; /* Thêm khoảng trắng xung quanh để dễ nhìn */
+  font-size: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
